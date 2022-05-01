@@ -8,10 +8,14 @@ const App: FC = () => {
   return (
     <div>
       <div>
-        <Menu defaultIndex={0} onSelect={(index) => console.log(index)} mode="vertical">
-          <MenuItem index={1}>1</MenuItem>
-          <MenuItem index={2} disabled>2</MenuItem>
-          <MenuItem index={3}>3</MenuItem>
+        <Menu
+          defaultIndex={0}
+          onSelect={(index) => console.log(index)}
+          mode="vertical"
+        >
+          <MenuItem>MenuItem 0</MenuItem>
+          <MenuItem disabled>MenuItem 1</MenuItem>
+          <MenuItem>MenuItem 2</MenuItem>
         </Menu>
       </div>
       <div>

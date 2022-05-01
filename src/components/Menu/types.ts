@@ -18,11 +18,11 @@ interface IMenuContext {
 }
 
 interface MenuItemProps {
-  index: number;
+  index?: number;
   disabled?: boolean;
   className?: string;
   style?: CSSProperties;
-  children?: ReactNode;
+  children: ReactNode;
 }
 
 export type { MenuProps, IMenuContext, MenuItemProps };

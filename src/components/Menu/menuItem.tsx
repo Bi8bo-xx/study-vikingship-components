@@ -11,7 +11,7 @@ const MenuItem: FC<MenuItemProps> = (props) => {
     'is-active': context.index === index,
   });
   const handleClick = () => {
-    if (context.onSelect && !disabled) {
+    if (context.onSelect && !disabled && typeof index === 'number') {
       context.onSelect(index);
     }
   };
@@ -25,5 +25,7 @@ const MenuItem: FC<MenuItemProps> = (props) => {
 MenuItem.defaultProps = {
   disabled: false,
 };
+
+MenuItem.displayName = 'MenuItem';
 
 export default MenuItem;

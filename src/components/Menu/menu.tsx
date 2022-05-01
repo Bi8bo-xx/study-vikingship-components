@@ -1,6 +1,13 @@
-import { FC, createContext, useState } from 'react';
+import {
+  FC,
+  createContext,
+  useState,
+  Children,
+  FunctionComponentElement,
+  cloneElement,
+} from 'react';
 import classNames from 'classnames';
-import { IMenuContext, MenuProps } from './types';
+import { IMenuContext, MenuItemProps, MenuProps } from './types';
 
 const MenuContext = createContext<IMenuContext>({ index: 0 });
 
@@ -21,10 +28,27 @@ const Menu: FC<MenuProps> = (props) => {
     index: currentActive ? currentActive : 0,
     onSelect: handleClick,
   };
+  const renderChildren = () => {
+    return Children.map(children, (child, i) => {
+      const childElement = child as FunctionComponentElement<MenuItemProps>;
+      const {
+        type: { displayName },
+        props,
+      } = childElement;
+
+      if (displayName === 'MenuItem') {
+        return cloneElement(childElement, { index: props.index || i });
+      } else {
+        console.error(
+          'Warning: Menu has a child which is not a MenuItem component'
+        );
+      }
+    });
+  };
   return (
     <ul className={classes} style={style} role="menu">
       <MenuContext.Provider value={passedContext}>
-        {children}
+        {renderChildren()}
       </MenuContext.Provider>
     </ul>
   );
