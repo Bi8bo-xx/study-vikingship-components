@@ -8,9 +8,9 @@ const App: FC = () => {
   return (
     <div>
       <div>
-        <Menu defaultIndex={0} onSelect={(index) => console.log(index)}>
+        <Menu defaultIndex={0} onSelect={(index) => console.log(index)} mode="vertical">
           <MenuItem index={1}>1</MenuItem>
-          <MenuItem index={2}>2</MenuItem>
+          <MenuItem index={2} disabled>2</MenuItem>
           <MenuItem index={3}>3</MenuItem>
         </Menu>
       </div>

@@ -178,8 +178,6 @@ $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
 $box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
 $box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
 
-// 按钮样式 start ↓
-
 // 通过 padding 控制按钮大小
 $btn-padding-x-sm: 0.5rem !default;
 $btn-padding-y-sm: 0.25rem !default;
@@ -225,8 +223,6 @@ $btn-border-radius-sm: $border-radius-sm !default;
 $btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
 
-// 按钮样式 end ↑
-
 // menu
 $menu-border-width: $border-width !default;
 $menu-border-color: $border-color !default;
@@ -241,7 +237,6 @@ $menu-item-active-color: $primary !default;
 $menu-item-active-border-width: 2px !default;
 $menu-item-disabled-color: $gray-600 !default;
 
-//sub-menu
 //submenu
 $submenu-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12),
   0 0 6px 0 rgba(0, 0, 0, 0.04);

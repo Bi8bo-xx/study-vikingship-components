@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 type MenuMode = 'horizontal' | 'vertical';
 type SelectCallback = (selectIndex: number) => void;
@@ -9,7 +9,7 @@ interface MenuProps {
   mode?: MenuMode;
   style?: CSSProperties;
   onSelect?: SelectCallback;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 interface IMenuContext {
@@ -22,7 +22,7 @@ interface MenuItemProps {
   disabled?: boolean;
   className?: string;
   style?: CSSProperties;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export type { MenuProps, IMenuContext, MenuItemProps };
