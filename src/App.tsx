@@ -1,39 +1,29 @@
 import { FC } from 'react';
-import Button from './components/Button/button';
-import { ButtonSize, ButtonType } from './components/Button/types';
 import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
+import SubMenu from './components/Menu/submenu';
 
 const App: FC = () => {
   return (
     <div>
       <div>
         <Menu
-          defaultIndex={0}
+          defaultIndex="0"
           onSelect={(index) => console.log(index)}
           mode="vertical"
+          defaultOpenSubMenus={['3']}
         >
           <MenuItem>MenuItem 0</MenuItem>
           <MenuItem disabled>MenuItem 1</MenuItem>
           <MenuItem>MenuItem 2</MenuItem>
+          <SubMenu title="dropdown">
+            <MenuItem>SubMenu 1</MenuItem>
+            <MenuItem>SubMenu 2</MenuItem>
+            <MenuItem>SubMenu 3</MenuItem>
+          </SubMenu>
         </Menu>
       </div>
-      <div>
-        <Button>默认按钮</Button>
-        <Button disabled>禁用按钮</Button>
-        <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>
-          Large Primary
-        </Button>
-        <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>
-          Small Danger
-        </Button>
-        <Button btnType={ButtonType.Link} href="http://www.baidu.com">
-          Baidu Link
-        </Button>
-        <Button btnType={ButtonType.Link} href="http://www.baidu.com" disabled>
-          Disabled Link
-        </Button>
-      </div>
+      <div></div>
     </div>
   );
 };
