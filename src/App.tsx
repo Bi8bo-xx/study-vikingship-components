@@ -10,17 +10,17 @@ const App: FC = () => {
         <Menu
           defaultIndex="0"
           onSelect={(index) => console.log(index)}
-          mode="vertical"
-          defaultOpenSubMenus={['3']}
+          // mode="vertical"
+          defaultOpenSubMenus={['2']}
         >
           <MenuItem>MenuItem 0</MenuItem>
           <MenuItem disabled>MenuItem 1</MenuItem>
-          <MenuItem>MenuItem 2</MenuItem>
-          <SubMenu title="dropdown">
+          <SubMenu title="MenuItem 2">
+            <MenuItem>SubMenu 0</MenuItem>
             <MenuItem>SubMenu 1</MenuItem>
             <MenuItem>SubMenu 2</MenuItem>
-            <MenuItem>SubMenu 3</MenuItem>
           </SubMenu>
+          <MenuItem>MenuItem 3</MenuItem>
         </Menu>
       </div>
       <div></div>

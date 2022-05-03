@@ -8,6 +8,7 @@ import {
   useContext,
   useState,
 } from 'react';
+import { TEST_ID } from './constants';
 import { MenuContenxt } from './menu';
 import { MenuItemProps, SubMenuProps } from './types';
 
@@ -74,11 +75,23 @@ const SubMenu: FC<SubMenuProps> = (props) => {
       }
     });
 
-    return <ul className={subMenuClasses}>{childElement}</ul>;
+    return (
+      <ul
+        className={subMenuClasses}
+        data-testid={`${TEST_ID.SUBMENU}-${index}`}
+      >
+        {childElement}
+      </ul>
+    );
   };
 
   return (
-    <li className={classes} key={index} {...hoverEvents}>
+    <li
+      className={classes}
+      key={index}
+      {...hoverEvents}
+      data-testid={`${TEST_ID.MENUITEM}-${index}`}
+    >
       <div className="submenu-title" {...clickEvents}>
         {title}
       </div>

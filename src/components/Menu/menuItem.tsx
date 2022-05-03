@@ -16,7 +16,12 @@ const MenuItem: FC<MenuItemProps> = (props) => {
     }
   };
   return (
-    <li className={classes} style={style} onClick={handleClick} role="menuitem">
+    <li
+      className={classes}
+      style={style}
+      onClick={handleClick}
+      data-testid={`menuitem-${index}`}
+    >
       {children}
     </li>
   );

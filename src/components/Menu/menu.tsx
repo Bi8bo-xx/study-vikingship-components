@@ -58,7 +58,7 @@ const Menu: FC<MenuProps> = (props) => {
     });
   };
   return (
-    <ul className={classes} style={style} role="menu">
+    <ul className={classes} style={style} data-testid="menu">
       <MenuContext.Provider value={passedContext}>
         {renderChildren()}
       </MenuContext.Provider>
