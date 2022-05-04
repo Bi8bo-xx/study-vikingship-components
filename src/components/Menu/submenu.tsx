@@ -8,6 +8,8 @@ import {
   useContext,
   useState,
 } from 'react';
+import Icon from '../Icon/icon';
+import Transition from '../Transition';
 import { TEST_ID } from './constants';
 import { MenuContenxt } from './menu';
 import { MenuItemProps, SubMenuProps } from './types';
@@ -23,6 +25,8 @@ const SubMenu: FC<SubMenuProps> = (props) => {
   const [menuOpen, setOpen] = useState(isOpened);
   const classes = classNames('menu-item submenu-item', className, {
     'is-active': context.index === index,
+    'is-opened': menuOpen,
+    'is-vertical': context.mode === 'vertical',
   });
   let timer: any;
   const handleMouse = (e: MouseEvent, toggle: boolean) => {
@@ -76,12 +80,14 @@ const SubMenu: FC<SubMenuProps> = (props) => {
     });
 
     return (
-      <ul
-        className={subMenuClasses}
-        data-testid={`${TEST_ID.SUBMENU}-${index}`}
-      >
-        {childElement}
-      </ul>
+      <Transition in={menuOpen} timeout={300} animation="zoom-in-top">
+        <ul
+          className={subMenuClasses}
+          data-testid={`${TEST_ID.SUBMENU}-${index}`}
+        >
+          {childElement}
+        </ul>
+      </Transition>
     );
   };
 
@@ -94,6 +100,7 @@ const SubMenu: FC<SubMenuProps> = (props) => {
     >
       <div className="submenu-title" {...clickEvents}>
         {title}
+        <Icon icon="angle-down" className="arrow-icon" />
       </div>
       {renderChildren()}
     </li>

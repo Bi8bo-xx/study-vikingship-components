@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
 enum ButtonSize {
   Large = 'lg',
@@ -18,7 +18,7 @@ interface BaseButtonProps {
   size?: ButtonSize;
   btnType?: ButtonType;
   href?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>;
