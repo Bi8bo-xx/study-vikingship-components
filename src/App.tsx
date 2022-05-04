@@ -1,29 +1,14 @@
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
-import Menu from './components/Menu/menu';
-import MenuItem from './components/Menu/menuItem';
-import SubMenu from './components/Menu/submenu';
+import Icon from './components/Icon/icon';
+
+library.add(fas);
 
 const App: FC = () => {
   return (
     <div>
-      <div>
-        <Menu
-          defaultIndex="0"
-          onSelect={(index) => console.log(index)}
-          // mode="vertical"
-          defaultOpenSubMenus={['2']}
-        >
-          <MenuItem>MenuItem 0</MenuItem>
-          <MenuItem disabled>MenuItem 1</MenuItem>
-          <SubMenu title="MenuItem 2">
-            <MenuItem>SubMenu 0</MenuItem>
-            <MenuItem>SubMenu 1</MenuItem>
-            <MenuItem>SubMenu 2</MenuItem>
-          </SubMenu>
-          <MenuItem>MenuItem 3</MenuItem>
-        </Menu>
-      </div>
-      <div></div>
+      <Icon icon="coffee" theme="danger" size="2x" />
     </div>
   );
 };
