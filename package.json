@@ -26,14 +26,18 @@
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
+    "rimraf": "^3.0.2",
     "webpack": "^5.72.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run clean && npm run build:ts && npm run build:css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "commit": "git cz"
+    "commit": "git cz",
+    "build:ts": "tsc -p tsconfig.build.json",
+    "build:css": "sass ./src/styles/index.sass ./build/index.css",
+    "clean": "rimraf ./build"
   },
   "config": {
     "commitizen": {
