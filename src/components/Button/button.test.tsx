@@ -1,6 +1,6 @@
 import { screen, render, fireEvent } from '@testing-library/react';
 import Button from './button';
-import { ButtonProps, ButtonSize, ButtonType } from './types';
+import { ButtonProps } from './types';
 
 describe('test Button component', () => {
   it('should render the correct default button', () => {
@@ -20,8 +20,8 @@ describe('test Button component', () => {
 
   it('should render the correct component based on different props', () => {
     const props: ButtonProps = {
-      btnType: ButtonType.Primary,
-      size: ButtonSize.Large,
+      btnType: 'primary',
+      size: 'lg',
       className: 'testClassName',
     };
 
@@ -33,7 +33,7 @@ describe('test Button component', () => {
 
   it('should render a link when btnType equals link and href is provided', () => {
     const props: ButtonProps = {
-      btnType: ButtonType.Link,
+      btnType: 'link',
       href: 'https://www.baidu.com',
     };
 

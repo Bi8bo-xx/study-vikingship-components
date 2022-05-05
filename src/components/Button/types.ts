@@ -1,16 +1,8 @@
 import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
-enum ButtonSize {
-  Large = 'lg',
-  Small = 'small',
-}
+type ButtonSize = 'sm' | 'lg';
 
-enum ButtonType {
-  Primary = 'primary',
-  Default = 'default',
-  Danger = 'danger',
-  Link = 'link',
-}
+type ButtonType = 'primary' | 'default' | 'danger' | 'link';
 
 interface BaseButtonProps {
   className?: string;
@@ -25,5 +17,4 @@ type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>;
 type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
 type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
 
-export { ButtonSize, ButtonType };
 export type { ButtonProps };
