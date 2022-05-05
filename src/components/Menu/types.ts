@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, FC, ReactNode } from 'react';
 
 type MenuMode = 'horizontal' | 'vertical';
 type SelectCallback = (selectIndex: string) => void;
@@ -35,4 +35,15 @@ interface SubMenuProps {
   children?: ReactNode;
 }
 
-export type { MenuProps, IMenuContext, MenuItemProps, SubMenuProps };
+type IMenuComponent = FC<MenuProps> & {
+  Item: FC<MenuItemProps>;
+  SubMenu: FC<SubMenuProps>;
+};
+
+export type {
+  MenuProps,
+  IMenuContext,
+  MenuItemProps,
+  SubMenuProps,
+  IMenuComponent,
+};
